@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
       claude:`<h2>ILN</h2><p>ILN group description.</p>`,
 
       ronin:`<h2>ILN</h2><p>ILN group description.</p>`,
-      clara:`<h2>ILN</h2><p>ILN group description.</p>`,
+      klara:`<h2>ILN</h2><p>ILN group description.</p>`,
 
       zeal:`<h2>ILN</h2><p>ILN group description.</p>`,
       freo:`<h2>ILN</h2><p>ILN group description.</p>`,
