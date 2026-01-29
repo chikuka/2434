@@ -68,38 +68,68 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("closeBtn");
     
     const contentMap = {
-      lzt: `
-      <h2>LZT</h2>
-      <p>This is scrollable content for LZT.</p>
+      elira: `
+      <h2>ELira Pendora</h2>
+      <p>Sample merch.</p>
       <div class="panel-gallery">
-        <img src="images/LOGO.png">
+        <img src="images/Khong_Co_Tieu_e577.png">
         <img src="images/HOA.png">
       </div>
       `,
+      finana: `
+      <h2>Finana Ryugu</h2>
+      <p>Sample merch.</p>
+      <div class="panel-gallery">
+        <img src="images/aia.png">
+        <img src="images/HOA.png">
+      </div>
+      `,
+      millie:`<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
+      enna:`<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
+      petra:`<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
       
-      ztm: `<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
-      
-      lxm: `<h2>LXM</h2><p>LXM description.</p>`,
-      
-      ntx: `<h2>NTX</h2><p>NTX profile and background.</p>`,
-      
-      iln: `<h2>ILN</h2><p>ILN group description.</p>`,
-      
-      xsl: `<h2>XSL</h2><p>XSL information.</p>`,
-      
-      krs: `<h2>KRS</h2><p>KRS profile.</p>`,
-      
-      dnt: `<h2>DNT</h2><p>DNT information.</p>`,
-      
-      btb: `<h2>BTB</h2><p>BTB information.</p>`
+      vox: `<h2>ILN</h2><p>ILN group description.</p>`,
+      luca:`<h2>ILN</h2><p>ILN group description.</p>`,
+      shu:`<h2>ILN</h2><p>ILN group description.</p>`,
+
+      sonny:`<h2>ILN</h2><p>ILN group description.</p>`,
+      alban:`<h2>ILN</h2><p>ILN group description.</p>`,
+      uki:`<h2>ILN</h2><p>ILN group description.</p>`,
+
+      maria:`<h2>ILN</h2><p>ILN group description.</p>`,
+      aia:`<h2>ILN</h2><p>ILN group description.</p>`,
+      scarle:`<h2>ILN</h2><p>ILN group description.</p>`,
+      ren:`<h2>ILN</h2><p>ILN group description.</p>`,
+
+      ver:`<h2>ILN</h2><p>ILN group description.</p>`,
+      doppy:`<h2>ILN</h2><p>ILN group description.</p>`,
+      melo:`<h2>ILN</h2><p>ILN group description.</p>`,
+
+      zali:`<h2>ILN</h2><p>ILN group description.</p>`,
+      vanta:`<h2>ILN</h2><p>ILN group description.</p>`,
+      willy:`<h2>ILN</h2><p>ILN group description.</p>`,
+      claude:`<h2>ILN</h2><p>ILN group description.</p>`,
+
+      ronin:`<h2>ILN</h2><p>ILN group description.</p>`,
+      klara:`<h2>ILN</h2><p>ILN group description.</p>`,
+
+      zeal:`<h2>ILN</h2><p>ILN group description.</p>`,
+      freo:`<h2>ILN</h2><p>ILN group description.</p>`,
+      seible:`<h2>ILN</h2><p>ILN group description.</p>`,            
+      kaelix: `<h2>BTB</h2>
+      <p>BTB information.</p>
+      <div class="panel-gallery">
+        <img src="images/Khong_Co_Tieu_e577.png">
+      </div>`
     };
   
     // Attach click events to all cards
     document.querySelectorAll(".card").forEach(card => {
       card.addEventListener("click", () => {
         const id = card.dataset.id; // direct from data-id
-        const img = card.dataset.img;
+        // const img = card.dataset.img;
         panelContent.innerHTML = contentMap[id] || "<h2>Unknown</h2><p>No content available.</p>";
+        // panelContent.innerHTML= '<h2>${id.toUpperCase()}</h2><img class="panel-img" src="${img}">';
   
         const glowColor = getComputedStyle(card).getPropertyValue("--glow-color").trim();
         if (glowColor) {

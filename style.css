@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
     min-height: 100vh;
     background:
@@ -122,7 +127,7 @@ body {
     display: block;       /* kill inline spacing */
     margin: 20px auto;    /* center horizontally */
     
-    width: 60%;         /* adjust size here */
+    width: 40%;         /* adjust size here */
     max-width: 80vw;
     height: auto;
 
@@ -211,16 +216,16 @@ nav a:hover {
 } */
 
 .cards {
-  /* display: grid; */
-  display: flex;
-  /* grid-template-columns: repeat(8,auto); */
-  justify-content: center;
-  align-items: center;
-  min-height: 500px;
-  flex-wrap: wrap;           /*allow wrap*/
-  gap: 60px;                 /*spacing between cards*/
-  margin: 0 auto;            /*center itself*/
-  max-width: 1200px;         /*optional: keeps layout tidy */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 25px;
+
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 /* .column{
@@ -231,7 +236,8 @@ nav a:hover {
 
 
 .card-section {
-  padding: 60px 20px;
+  /* padding: 60px 20px; */
+  padding: 40px 20px;
   text-align: center;
   animation: fadeUp 1.6s ease forwards;
 }
@@ -242,11 +248,11 @@ nav a:hover {
 }
 
 /* trigger*/
-.card:nth-child(5n + 1) { animation-delay: 4.1s; }
-.card:nth-child(5n + 2) { animation-delay: 4.35s; }
-.card:nth-child(5n + 3) { animation-delay: 4.2s; }
-.card:nth-child(5n + 4) { animation-delay: 4.5s; }
-.card:nth-child(5n + 5) { animation-delay: 4.3s; }
+.card:nth-child(5n + 1) { animation-delay: 5.1s; }
+.card:nth-child(5n + 2) { animation-delay: 5.35s; }
+.card:nth-child(5n + 3) { animation-delay: 5.2s; }
+.card:nth-child(5n + 4) { animation-delay: 5.5s; }
+.card:nth-child(5n + 5) { animation-delay: 5.3s; }
 
 .card input {
   display: none;
@@ -255,10 +261,14 @@ nav a:hover {
 .card {
   --glow-color: rgba(180,160,255,0.35); /* default */
 
-  width: 200px;
-  background: transparent;
+  width: 150px;
+  height: 300px;
+  /* background: transparent; */
+  background: none;
   border: none;
+  padding: 0;
   cursor: pointer;
+  overflow: hidden;
 
   opacity: 0;
   animation: fadeUp 0.8s ease forwards;
@@ -270,10 +280,9 @@ nav a:hover {
 
 .card img {
   width: 100%;
+  height: 100%;
   display: block;
-  /* border-radius: 10px; */
   object-fit: cover;
-  display: block;
 }
 
 .card:hover {
