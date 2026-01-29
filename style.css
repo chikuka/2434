@@ -220,7 +220,7 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: center;
 
-    gap: 40px;
+    gap: 25px;
 
     width: 100%;
     max-width: 1800px;
@@ -236,7 +236,8 @@ nav a:hover {
 
 
 .card-section {
-  padding: 60px 20px;
+  /* padding: 60px 20px; */
+  padding: 40px 20px;
   text-align: center;
   animation: fadeUp 1.6s ease forwards;
 }
@@ -260,8 +261,8 @@ nav a:hover {
 .card {
   --glow-color: rgba(180,160,255,0.35); /* default */
 
-  width: 100px;
-  height: 360px;
+  width: 150px;
+  height: 300px;
   /* background: transparent; */
   background: none;
   border: none;
