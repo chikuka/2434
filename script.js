@@ -5,19 +5,6 @@ const logoSpans = document.querySelectorAll(".logo-parts");
 const logoImage = document.querySelector(".logo-image");
 const dividerImage = document.querySelector(".divider-img");
 
-// Always start at top on reload
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
-window.scrollTo(0, 0);
-document.body.style.overflow = "hidden";
-
-setTimeout(() => {
-  document.body.style.overflow = "";
-}, 4600); // match intro end timing
-
-
-
 /* INTRO SEQUENCE */
 window.addEventListener("DOMContentLoaded", () => {
 // Fade IN logo image
@@ -55,14 +42,23 @@ window.addEventListener("DOMContentLoaded", () => {
     }, 3600);
     setTimeout(() => {
         page.classList.remove("hidden");
-    }, 4400);
-    setTimeout(() => {
-      document.querySelector(".site-header").classList.add("show");
-      }, 4700);
+    }, 4500);
 
+//   setTimeout(() => {
+//     logoSpans.forEach(span => {
+//       span.classList.remove("active");
+//       span.classList.add("fade");
+//     });
+
+//     logoImage.classList.add("fade");
+//     dividerImage.classList.add("fade");
+//   }, 10000);
+
+//   setTimeout(() => {
+//     intro.style.top = "-100vh";
+//     page.classList.remove("hidden");
+//   }, 10000);
 });
-
-document.body.style.overflow = "";
 
 /* PANEL LOGIC */
 document.addEventListener("DOMContentLoaded", () => {
@@ -88,63 +84,38 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="images/HOA.png">
       </div>
       `,
-      millie:`<h2>ZTM</h2>
-      <p>ZTM lore and info here.</p>`,
-      enna:`<h2>ZTM</h2>
-      <p>ZTM lore and info here.</p>`,
-      petra:`<h2>ZTM</h2>
-      <p>ZTM lore and info here.</p>`,
+      millie:`<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
+      enna:`<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
+      petra:`<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
       
-      vox: `<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      luca:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      shu:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
+      vox: `<h2>ILN</h2><p>ILN group description.</p>`,
+      luca:`<h2>ILN</h2><p>ILN group description.</p>`,
+      shu:`<h2>ILN</h2><p>ILN group description.</p>`,
 
-      sonny:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      alban:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      uki:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
+      sonny:`<h2>ILN</h2><p>ILN group description.</p>`,
+      alban:`<h2>ILN</h2><p>ILN group description.</p>`,
+      uki:`<h2>ILN</h2><p>ILN group description.</p>`,
 
-      maria:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      aia:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      scarle:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      ren:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
+      maria:`<h2>ILN</h2><p>ILN group description.</p>`,
+      aia:`<h2>ILN</h2><p>ILN group description.</p>`,
+      scarle:`<h2>ILN</h2><p>ILN group description.</p>`,
+      ren:`<h2>ILN</h2><p>ILN group description.</p>`,
 
-      ver:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      doppy:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      melo:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
+      ver:`<h2>ILN</h2><p>ILN group description.</p>`,
+      doppy:`<h2>ILN</h2><p>ILN group description.</p>`,
+      melo:`<h2>ILN</h2><p>ILN group description.</p>`,
 
-      zali:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      vanta:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      willy:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      claude:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
+      zali:`<h2>ILN</h2><p>ILN group description.</p>`,
+      vanta:`<h2>ILN</h2><p>ILN group description.</p>`,
+      willy:`<h2>ILN</h2><p>ILN group description.</p>`,
+      claude:`<h2>ILN</h2><p>ILN group description.</p>`,
 
-      ronin:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      klara:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
+      ronin:`<h2>ILN</h2><p>ILN group description.</p>`,
+      klara:`<h2>ILN</h2><p>ILN group description.</p>`,
 
-      zeal:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      freo:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,
-      seible:`<h2>ILN</h2>
-      <p>ILN group description.</p>`,            
+      zeal:`<h2>ILN</h2><p>ILN group description.</p>`,
+      freo:`<h2>ILN</h2><p>ILN group description.</p>`,
+      seible:`<h2>ILN</h2><p>ILN group description.</p>`,            
       kaelix: `<h2>BTB</h2>
       <p>BTB information.</p>
       <div class="panel-gallery">
@@ -182,50 +153,3 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
   
   });
-
-  // Smooth scroll with easing for header nav
-function smoothScrollTo(targetY, duration = 500) {
-  const startY = window.scrollY;
-  const diff = targetY - startY;
-  let startTime = null;
-
- function easeInOutQuart(t) {
-    return t < 0.1
-      ? 5 * t * t * t * t
-      : 1 - Math.pow(-1 * t + 1, 3) / 2;
-  }
-
-  function step(timestamp) {
-    if (!startTime) startTime = timestamp;
-    const time = timestamp - startTime;
-    const progress = Math.min(time / duration, 1);
-
-    window.scrollTo(0, startY + diff * easeInOutQuart(progress));
-
-    if (time < duration) {
-      requestAnimationFrame(step);
-    }
-  }
-  requestAnimationFrame(step);
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", e => {
-    const id = link.getAttribute("href");
-    const target = document.querySelector(id);
-    if (!target) return;
-
-    e.preventDefault();
-
-    const headerHeight =
-      document.querySelector(".site-header")?.offsetHeight || 0;
-
-    const targetY =
-      target.getBoundingClientRect().top +
-      window.pageYOffset -
-      headerHeight;
-
-    smoothScrollTo(targetY, 550);
-  });
-});
-
