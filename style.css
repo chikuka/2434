@@ -402,28 +402,29 @@ body.panel-open {
   left: 0;
   width: 100%;
   z-index: 50;
-  background:
-    linear-gradient(
-    /* rgba(247, 247, 247, 0.50), */
-    rgba(165, 126, 74, 0.5)
-    ),
-    url("images/pc\ pattern.png");
-    background-repeat: repeat;  
-    background-size: 35% 35%;
-    background-position: center;
-    background-attachment: fixed;
-    color: #b89c78;
-    font-family: 'Castellar';
 
-  /* background: rgba(20, 20, 30, 0.55); */
-  /* backdrop-filter: blur(10px); */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 214, 214, 0.75), /* pastel red */
+    rgba(255, 233, 200, 0.75), /* peach */
+    rgba(255, 249, 204, 0.75), /* pastel yellow */
+    rgba(214, 245, 214, 0.75), /* mint */
+    rgba(214, 232, 255, 0.75), /* baby blue */
+    rgba(229, 214, 255, 0.75)  /* lavender */
+  );
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: #6b5b45;
+  font-family: 'Castellar';
+
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-10px);
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+  transform: translateY(-12px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 .site-header.show {
   opacity: 1;
   pointer-events: auto;
@@ -441,7 +442,7 @@ body.panel-open {
 }
 
 .header-logo img {
-  height: clamp(20px, 3vw, 150px);
+  height: clamp(20px, 3vw, 180px);
   width: auto;
   max-width: 100%;
 
@@ -460,22 +461,12 @@ body.panel-open {
 
 /*Nav*/
 .nav-link {
-  color: #e6d6b8;
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 1px;
-  position: relative;
+  color: #5a4a35;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.6);
 }
 
 .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 1px;
   background: currentColor;
-  transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
@@ -641,3 +632,4 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
