@@ -193,7 +193,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #b4a0ff;
+  color: #b1700e;
 }
 
 /* .title {
@@ -400,8 +400,8 @@ body.panel-open {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  /* color: #6b5b45; */
-  font-family: 'Castellar';
+  color: #6b5b45;
+  font-family: 'Brittanic';
 
   opacity: 0;
   pointer-events: none;
@@ -477,12 +477,12 @@ body.panel-open {
   padding: 10px 26px;
   border-radius: 999px;
 
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 1.5px;
-  font-weight: 500;
+  font-weight: 1000;
   text-decoration: none;
 
-  color: rgba(70, 60, 45, 0.85);
+  color: rgba(70, 44, 6, 0.85);
 
   background:
     linear-gradient(
@@ -552,7 +552,6 @@ body.panel-open {
       rgba(235, 245, 255, 0.18)
     );
 }
-
 
 
 /* Ticket */
