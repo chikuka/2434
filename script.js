@@ -61,7 +61,6 @@ window.addEventListener("DOMContentLoaded", () => {
       }, 4700);
 
 });
-
 document.body.style.overflow = "";
 
 /* PANEL LOGIC */
@@ -229,3 +228,44 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+/* ARTIST SLIDER (MANUAL) */
+const artistImages = [
+  "artist icon/Ao.png",
+  "artist icon/Chúi.png",
+  "artist icon/Ebi.png",
+  "artist icon/Hana.png",
+  "artist icon/mayo.png",
+  "artist icon/Minty.png",
+  "artist icon/Nhým.png",
+  "artist icon/Stugi.png",
+  "artist icon/Tảo.png",
+  "artist icon/Tegami.png",
+  "artist icon/UsaRi.png"
+];
+
+let artistIndex = 0;
+
+const artistSlide = document.getElementById("artistSlide");
+const prevBtn = document.querySelector(".artist-btn.prev");
+const nextBtn = document.querySelector(".artist-btn.next");
+
+function updateSlide() {
+  artistSlide.style.opacity = 0;
+
+  setTimeout(() => {
+    artistSlide.src = artistImages[artistIndex];
+    artistSlide.style.opacity = 1;
+  }, 200);
+}
+
+if (prevBtn && nextBtn && artistSlide) {
+  prevBtn.addEventListener("click", () => {
+    artistIndex = (artistIndex - 1 + artistImages.length) % artistImages.length;
+    updateSlide();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    artistIndex = (artistIndex + 1) % artistImages.length;
+    updateSlide();
+  });
+}
