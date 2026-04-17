@@ -5,83 +5,6 @@ const logoSpans = document.querySelectorAll(".logo-parts");
 const logoImage = document.querySelector(".logo-image");
 const dividerImage = document.querySelector(".divider-img");
 
-// ===== LOADER (ADD THIS AT THE VERY TOP) =====
-const loader = document.getElementById("loader");
-const loadText = document.getElementById("loadText");
-
-const images = Array.from(document.querySelectorAll("img"));
-
-let loaded = 0;
-let total = images.length;
-
-let fakeProgress = 0;
-let realDone = false;
-
-document.body.style.overflow = "hidden";
-
-// Fake progress 0 → 90
-const fakeInterval = setInterval(() => {
-  if (fakeProgress < 90) {
-    fakeProgress += Math.random() * 3 + 1;
-    fakeProgress = Math.min(fakeProgress, 90);
-    updateText(Math.floor(fakeProgress));
-  } else {
-    clearInterval(fakeInterval);
-  }
-}, 120);
-
-// Real loading
-function imageLoaded() {
-  loaded++;
-  if (loaded >= total) {
-    realDone = true;
-    finishLoading();
-  }
-}
-
-// Attach listeners
-images.forEach(img => {
-  if (!img.src) {
-    imageLoaded();
-    return;
-  }
-
-  if (img.complete && img.naturalWidth !== 0) {
-    imageLoaded();
-  } else {
-    img.addEventListener("load", imageLoaded, { once: true });
-    img.addEventListener("error", imageLoaded, { once: true });
-  }
-});
-
-// Safety fallback
-setTimeout(() => {
-  realDone = true;
-  finishLoading();
-}, 8000);
-
-// UI update
-function updateText(value) {
-  loadText.textContent = value + "%";
-}
-
-// Finish
-function finishLoading() {
-  const waitFake = setInterval(() => {
-    if (fakeProgress >= 85 && realDone) {
-      clearInterval(waitFake);
-
-      updateText(100);
-
-      setTimeout(() => {
-        loader.classList.add("hidden");
-        document.body.style.overflow = "";
-        startIntro(); // 👈 THIS is important
-      }, 400);
-    }
-  }, 50);
-}
-
 // Always start at top on reload
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
@@ -89,59 +12,14 @@ if ('scrollRestoration' in history) {
 window.scrollTo(0, 0);
 document.body.style.overflow = "hidden";
 
-const loader = document.getElementById("loader");
-const loadText = document.getElementById("loadText");
+setTimeout(() => {
+  document.body.style.overflow = "";
+}, 4600); // match intro end timing
 
-const images = Array.from(document.images);
-let loaded = 0;
-const total = images.length;
-
-// Prevent scroll during load
-document.body.style.overflow = "hidden";
-
-function updateProgress() {
-  const percent = Math.round((loaded / total) * 100);
-  loadText.textContent = percent + "%";
-}
-
-function imageLoaded() {
-  loaded++;
-  updateProgress();
-
-  if (loaded === total) {
-    allLoaded();
-  }
-}
-
-// Handle images
-if (total === 0) {
-  allLoaded();
-} else {
-  images.forEach(img => {
-    if (img.complete) {
-      imageLoaded();
-    } else {
-      img.addEventListener("load", imageLoaded);
-      img.addEventListener("error", imageLoaded);
-    }
-  });
-}
-
-function allLoaded() {
-  // small delay so 100% is visible
-  setTimeout(() => {
-    loader.classList.add("hidden");
-
-    // allow scroll again
-    // document.body.style.overflow = "";
-
-    startIntro(); // 👈 trigger your intro AFTER loading
-  }, 400);
-}
 
 
 /* INTRO SEQUENCE */
-function startIntro() {
+window.addEventListener("DOMContentLoaded", () => {
 // Fade IN logo image
   setTimeout(() => {
     logoImage.classList.add("active");
@@ -186,7 +64,7 @@ function startIntro() {
 document.body.style.overflow = "";
 
 /* PANEL LOGIC */
-function startIntro() {
+document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("overlay");
     const panel = document.getElementById("panel");
     const panelContent = document.getElementById("panelContent");
