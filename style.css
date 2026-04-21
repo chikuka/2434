@@ -20,6 +20,7 @@ body {
   color: #b89c78;
   font-family: 'Castellar';
 }
+<<<<<<< HEAD
 
 /* Hide scrollbar but keep scrolling */
 body {
@@ -31,6 +32,8 @@ body::-webkit-scrollbar {
   display: none;             /* Chrome, Safari */
 }
 
+=======
+>>>>>>> 4e17a1bab81971ec35521225a6329b225f06071c
 
 /* PAGE VISIBILITY */
 .page {
@@ -216,10 +219,13 @@ nav a:hover {
 .card {
   --glow-color: rgba(180,160,255,0.35); /* default */
 
-  /*card img size*/
   width: 150px;
   height: 300px;
+<<<<<<< HEAD
 
+=======
+  /* background: transparent; */
+>>>>>>> 4e17a1bab81971ec35521225a6329b225f06071c
   background: none;
   border: none;
   padding: 0;
@@ -331,6 +337,7 @@ body.panel-open {
   border-radius: 10px;
   object-fit: cover;
 }
+<<<<<<< HEAD
 
 .site-header {
   position: fixed;
@@ -890,3 +897,5 @@ img {
   -webkit-user-drag: none;
   user-drag: none;
 }
+=======
+>>>>>>> 4e17a1bab81971ec35521225a6329b225f06071c
