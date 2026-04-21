@@ -324,3 +324,27 @@ if (prevBtn && nextBtn && artistSlide) {
 window.addEventListener("load", () => {
   startPreloading();
 });
+// ====================== IMAGE PROTECTION ======================
+document.addEventListener('DOMContentLoaded', () => {
+  const images = document.querySelectorAll('img');
+  
+  images.forEach(img => {
+    // Disable dragging
+    img.setAttribute('draggable', 'false');
+    
+    // Disable right-click menu
+    img.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      return false;
+    });
+  });
+
+  // Global protection (works even for dynamically loaded panel images)
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG' || e.target.closest('img')) {
+      e.preventDefault();
+    }
+  });
+
+  console.log('🛡️ Image protection activated');
+});

@@ -774,6 +774,83 @@ section {
   font-style: italic;
 }
 
+/* ====================== MOBILE + TABLET RESPONSIVENESS ====================== */
+@media (max-width: 1024px) {
+  .simple-section {
+    padding: 100px 20px;
+    min-height: auto;
+  }
+
+  .card {
+    width: 130px;
+    height: 260px;
+  }
+
+  .event-map iframe {
+    width: 100% !important;
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 15px;
+  }
+
+  .header-logo img {
+    height: clamp(35px, 9vw, 90px);
+  }
+
+  .header-nav .btn {
+    padding: 9px 20px;
+    font-size: 17px;
+  }
+
+  .cards {
+    padding: 30px 15px;
+    gap: 18px;
+  }
+
+  .simple-section h2 {
+    font-size: 30px;
+  }
+
+  .artist-slider img {
+    width: min(420px, 92vw);
+  }
+
+  .logo-image {
+    max-width: 88vw;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px 32px;
+    font-size: 20px;
+  }
+
+  .contact-note {
+    font-size: 16px;
+  }
+
+  .card {
+    width: 115px;
+    height: 230px;
+  }
+}
 /* ====================== MOBILE: VERTICAL STACK ====================== */
 @media (max-width: 600px) {
   .contact-container {
@@ -788,4 +865,28 @@ section {
     padding: 16px 30px;
     font-size: 21px;
   }
+}
+
+/* ====================== IMAGE PROTECTION ====================== */
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: auto; /* keeps clicks working on cards, buttons, etc. */
+}
+
+/* Extra protection for key images */
+.card img,
+.artist-slider img,
+.ticket-image,
+.loader-logo,
+.logo-image,
+.divider-img,
+.panel-gallery img {
+  -webkit-user-drag: none;
+  user-drag: none;
 }
