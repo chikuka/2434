@@ -741,7 +741,24 @@ section {
   white-space: nowrap;
 }
 
-/* Optional: extra glow on hover for contact buttons */
+/* ====================== CONTACT SECTION ====================== */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 50px 0 30px;
+}
+
+.contact-btn {
+  padding: 16px 42px;
+  font-size: 22px;
+  min-width: 220px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Extra glow on hover */
 .contact-btn:hover {
   box-shadow: 
     0 0 35px rgba(180, 160, 255, 0.5),
@@ -757,14 +774,18 @@ section {
   font-style: italic;
 }
 
-/* Mobile responsiveness */
+/* ====================== MOBILE: VERTICAL STACK ====================== */
 @media (max-width: 600px) {
   .contact-container {
-    gap: 18px;
+    flex-direction: column;     /* ← This makes them vertical */
+    align-items: center;
+    gap: 20px;
   }
+
   .contact-btn {
-    padding: 14px 32px;
-    font-size: 20px;
-    min-width: 180px;
+    width: 100%;                /* Full width of container */
+    max-width: 280px;           /* Nice readable width on phones */
+    padding: 16px 30px;
+    font-size: 21px;
   }
 }
