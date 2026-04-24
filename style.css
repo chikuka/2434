@@ -346,6 +346,14 @@ body.panel-open {
   object-fit: cover;
 }
 
+.panel {
+  pointer-events: auto;
+}
+
+.overlay:not(.active) {
+  pointer-events: none !important;
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -904,3 +912,57 @@ img {
   -webkit-user-drag: none;
   user-drag: none;
 }
+
+/* ================= COSPLAYER GRID ================= */
+
+/* .cosplayer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  max-width: 900px;
+  margin: 50px auto 0;
+} */
+
+/* .cosplayer-card {
+  text-align: center;
+}
+
+.cosplayer-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 0 25px rgba(180,160,255,0.3),
+    0 0 60px rgba(180,160,255,0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cosplayer-card img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 35px rgba(180,160,255,0.5),
+    0 0 80px rgba(180,160,255,0.25);
+}
+
+.cosplayer-card p {
+  margin-top: 12px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .cosplayer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cosplayer-grid {
+    grid-template-columns: 1fr;
+  }
+} */

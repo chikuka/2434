@@ -217,10 +217,12 @@ panelImage.src = img;
   });
 }); 
   // Close panel
-  function closePanel() {
-    overlay.classList.remove("active");
-    document.body.classList.remove("panel-open");
-  }
+function closePanel() {
+  overlay.classList.remove("active");
+  document.body.classList.remove("panel-open");
+
+  panel.classList.remove("opening");
+}  
   closeBtn.addEventListener("click", closePanel);
   overlay.addEventListener("click", e => { if (e.target === overlay) closePanel(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
