@@ -154,80 +154,68 @@ document.addEventListener("DOMContentLoaded", () => {
   const panelContent = document.getElementById("panelContent");
   const closeBtn = document.getElementById("closeBtn");
    
-  const contentMap = {
-    elira: `
-    <h2>ELira Pendora</h2>
-    <p>Sample merch.</p>
-    <div class="panel-gallery">
-      <img src="images/Khong_Co_Tieu_e577.png">
-      <img src="images/HOA.png">
-    </div>
-    `,
-    finana: `
-    <h2>Finana Ryugu</h2>
-    <p>Sample merch.</p>
-    <div class="panel-gallery">
-      <img src="images/aia.png">
-      <img src="images/HOA.png">
-    </div>
-    `,
-    millie:`<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
-    enna:`<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
-    petra:`<h2>ZTM</h2><p>ZTM lore and info here.</p>`,
-    
-    vox: `<h2>ILN</h2><p>ILN group description.</p>`,
-    luca:`<h2>ILN</h2><p>ILN group description.</p>`,
-    shu:`<h2>ILN</h2><p>ILN group description.</p>`,
+const imageMap = {
+  elira: "images/elira_gift.png",
+  finana: "images/feesh_gift.png",
+  millie: "images/millie_gift.png",
+  enna: "images/enna_gift.png",
+  petra: "images/petra_gift.png",
 
-    sonny:`<h2>ILN</h2><p>ILN group description.</p>`,
-    alban:`<h2>ILN</h2><p>ILN group description.</p>`,
-    uki:`<h2>ILN</h2><p>ILN group description.</p>`,
+  vox: "images/vox_gift.png",
+  luca: "images/luca_gift.png",
+  shu: "images/shu_gift.png",
 
-    maria:`<h2>ILN</h2><p>ILN group description.</p>`,
-    aia:`<h2>ILN</h2><p>ILN group description.</p>`,
-    scarle:`<h2>ILN</h2><p>ILN group description.</p>`,
-    ren:`<h2>ILN</h2><p>ILN group description.</p>`,
+  sonny: "images/sonny_gift.png",
+  alban: "images/alban_gift.png",
+  uki: "images/uki_gift.png",
 
-    ver:`<h2>ILN</h2><p>ILN group description.</p>`,
-    doppy:`<h2>ILN</h2><p>ILN group description.</p>`,
-    melo:`<h2>ILN</h2><p>ILN group description.</p>`,
+  maria: "images/mari_gift.png",
+  aia: "images/aia_gift.png",
+  scarle: "images/scale_gift.png",
+  ren: "images/ren_gift.png",
 
-    zali:`<h2>ILN</h2><p>ILN group description.</p>`,
-    vanta:`<h2>ILN</h2><p>ILN group description.</p>`,
-    willy:`<h2>ILN</h2><p>ILN group description.</p>`,
-    claude:`<h2>ILN</h2><p>ILN group description.</p>`,
+  ver: "images/ver_gift.png",
+  doppy: "images/doppi_gift.png",
+  melo: "images/melo_gift.png",
 
-    ronin:`<h2>ILN</h2><p>ILN group description.</p>`,
-    klara:`<h2>ILN</h2><p>ILN group description.</p>`,
+  zali: "images/zali_gift.png",
+  vanta: "images/vanta_gift.png",
+  willy: "images/willy_gift.png",
+  claude: "images/claude_gift.png",
 
-    zeal:`<h2>ILN</h2><p>ILN group description.</p>`,
-    freo:`<h2>ILN</h2><p>ILN group description.</p>`,
-    seible:`<h2>ILN</h2><p>ILN group description.</p>`,
-    kaelix: `<h2>BTB</h2>
-    <p>BTB information.</p>
-    <div class="panel-gallery">
-      <img src="images/Khong_Co_Tieu_e577.png">
-    </div>`
-  };
- 
+  ronin: "images/ronin_gift.png",
+  klara: "images/klara_gift.png",
+
+  zeal: "images/zeal_gift.png",
+  freo: "images/freo_gift.png",
+  seible: "images/seible_gift.png",
+  kaelix: "images/kaelix_gift.png"
+};
+
   // Attach click events to all cards
-  document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("click", () => {
-      const id = card.dataset.id;
-      panelContent.innerHTML = contentMap[id] || "<h2>Unknown</h2><p>No content available.</p>";
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("click", () => {
+    const id = card.dataset.id;
 
-      const glowColor = getComputedStyle(card).getPropertyValue("--glow-color").trim();
-      if (glowColor) {
-        panel.style.setProperty("--panel-glow", glowColor);
-      } else {
-        panel.style.removeProperty("--panel-glow");
-      }
+    const img = imageMap[id] || "images/gift.png";
 
-      overlay.classList.add("active");
-      document.body.classList.add("panel-open");
-    });
+    // 🔥 SET PANEL IMAGE
+    const panelImage = document.getElementById("panelImage");
+panelImage.src = img;
+
+    // KEEP GLOW (your original logic)
+    const glowColor = getComputedStyle(card)
+      .getPropertyValue("--glow-color")
+      .trim();
+
+    if (glowColor) {
+      panel.style.setProperty("--panel-glow", glowColor);
+    }
+
+    overlay.classList.add("active");
+    document.body.classList.add("panel-open");
   });
- 
+}); 
   // Close panel
   function closePanel() {
     overlay.classList.remove("active");

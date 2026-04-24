@@ -270,21 +270,23 @@ nav a:hover {
 }
 
 .panel {
-  width: min(900px, 90vw);
-  height: min(80vh, 700px);
-  background-image: url("images/pc%20pattern.png");
-  border-radius: 14px;
-  box-shadow: 0 0 40px var(--panel-glow, rgba(180,160,255,0.4)),
-              0 0 80px var(--panel-glow, rgba(180,160,255,0.2));
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transform: scale(0.96) translateY(20px);
-  opacity: 0;
-  transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.4s ease;
+  background: none; /* remove background-image */
 }
 
+.panel-image {
+  max-width: 90vw;
+  max-height: 85vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+  border-radius: 14px;
+
+  box-shadow:
+    0 0 40px var(--panel-glow),
+    0 0 80px var(--panel-glow);
+}
 .overlay.active .panel {
   transform: scale(1) translateY(0);
   opacity: 1;
@@ -294,6 +296,18 @@ nav a:hover {
   padding: 30px;
   overflow-y: auto;
   line-height: 1.6;
+}
+
+.overlay {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden; /* 🔥 add this */
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible; /* 🔥 add this */
 }
 
 .close-btn {
