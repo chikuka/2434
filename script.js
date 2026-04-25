@@ -28,11 +28,14 @@ function updateProgress() {
   loadingText.textContent = `Loading... ${percent}%`;
 }
 
+// Cache of preloaded Image objects — keeps them in memory so panel swaps are instant
+const imageCache = new Map();
+
 function preloadImage(src) {
   return new Promise(resolve => {
     if (!src) { resolve(); return; }
     const img   = new Image();
-    img.onload  = () => { loadedCount++; updateProgress(); resolve(); };
+    img.onload  = () => { imageCache.set(src, img); loadedCount++; updateProgress(); resolve(); };
     img.onerror = () => { console.warn('Image failed to load:', src); loadedCount++; updateProgress(); resolve(); };
     img.src     = src;
   });
@@ -60,7 +63,9 @@ async function startPreloading() {
     "images/Khong_Co_Tieu_e577.png",
     "images/HOA.png",
     "images/aia.png",
-    "images/HOA1.png"
+    "images/HOA1.png",
+    // Panel gift images – preload so clicking a card is instant
+    ...Object.values(imageMap)
   ];
   extraImages.forEach(src => imageSources.add(src));
 
