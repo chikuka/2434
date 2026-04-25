@@ -728,3 +728,86 @@ img {
     height: 230px;
   }
 }
+
+/* ====================== EVENT INFO STYLING ====================== */
+.event-map iframe {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow:
+    0 0 40px rgba(180,160,255,0.2),
+    0 8px 40px rgba(0,0,0,0.3);
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.event-info h2 {
+  font-family: 'Castellar', serif;
+  font-size: clamp(18px, 2.2vw, 30px);
+  line-height: 1.45;
+  letter-spacing: 2px;
+  color: #b89c78;
+  text-shadow:
+    0 0 18px rgba(180,160,255,0.45),
+    0 0 40px rgba(255,200,150,0.25);
+  padding-top: 22px;
+  border-top: 1px solid rgba(184,156,120,0.35);
+}
+
+.event-info p {
+  font-family: 'Brittanic', sans-serif;
+  font-size: clamp(14px, 1.4vw, 20px);
+  line-height: 2.2;
+  letter-spacing: 1.5px;
+  color: rgba(184,156,120,0.85);
+}
+
+.event-info::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184,156,120,0.4),
+    transparent
+  );
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .event-info h2 {
+    font-size: clamp(16px, 4vw, 24px);
+    text-align: center;
+  }
+
+  .event-info p {
+    font-size: clamp(13px, 3vw, 18px);
+    text-align: center;
+  }
+}
+
+/* ====================== LOADER NOTICE ====================== */
+.loader-notice {
+  margin-top: 24px;
+  padding: 10px 20px;
+  font-family: 'Brittanic', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1.2px;
+  line-height: 1.7;
+  color: rgba(180, 120, 80, 0.75);
+  border: 1px solid rgba(180, 120, 80, 0.25);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  text-align: center;
+  animation: noticeFlicker 3s ease-in-out infinite;
+}
+
+@keyframes noticeFlicker {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 1; }
+}
