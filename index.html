@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <title>Prism Realm</title>
+
+  <!-- Critical assets: preload so the loader screen renders instantly -->
+  <link rel="preload" href="images/LOGOglow.png"    as="image">
+  <link rel="preload" href="images/pc%20pattern.png" as="image">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -26,16 +31,11 @@
        </a>
       <!-- NAV -->
       <nav class="header-nav">
-        <!--a href="#characters" class="nav-link">Livers</a-->
         <a href="#characters" class="btn">Livers</a>
-        
-        <a href="#artists" class="btn">Artist</a>
-
-        <a href="#tickets" class="btn">Ticket</a>
-
-        <a href="#event" class="btn">Event</a>
-
-        <a href="#contact" class="btn">Contact</a>
+        <a href="#artists"    class="btn">Artist</a>
+        <a href="#tickets"    class="btn">Ticket</a>
+        <a href="#event"      class="btn">Event</a>
+        <a href="#contact"    class="btn">Contact</a>
       </nav>
     </div>
   </header>
@@ -44,223 +44,173 @@
     <img src="images/LOGOglow.png" alt="anni logo" class="logo-image">
     <h1 class="divider">
       <img src="images/HOA1.png" class="divider-img">
-      </h1>
-      <h2 class="logo">
-        <!-- <img src="NIJIEN5THANNI.png"> -->
-        <span class="logo-parts">N</span>
-        <span class="logo-parts">I</span>
-        <span class="logo-parts">J</span>
-        <span class="logo-parts">I</span>
-        <span class="logo-parts">S</span>
-        <span class="logo-parts">A</span>
-        <span class="logo-parts">N</span>
-        <span class="logo-parts">J</span>
-        <span class="logo-parts">I</span>
-        <span class="logo-parts"></span>
-        <span class="logo-parts">E</span>
-        <span class="logo-parts">N</span>
-        <span class="logo-parts"> </span>
-        <span class="logo-parts">5</span>
-        <span class="logo-parts">T</span>
-        <span class="logo-parts">H</span>
-        <span class="logo-parts"></span>
-        <span class="logo-parts">A</span>
-        <span class="logo-parts">N</span>
-        <span class="logo-parts">N</span>
-        <span class="logo-parts">I</span>
-        <span class="logo-parts">V</span>
-        <span class="logo-parts">E</span>
-        <span class="logo-parts">R</span>
-        <span class="logo-parts">S</span>
-        <span class="logo-parts">A</span>
-        <span class="logo-parts">R</span>
-        <span class="logo-parts">Y</span>
-        <span class="logo-parts"></span>
-        <span class="logo-parts">F</span>
-        <span class="logo-parts">A</span>
-        <span class="logo-parts">N</span>
-        <span class="logo-parts"></span>
-        <span class="logo-parts">O</span>
-        <span class="logo-parts">F</span>
-        <span class="logo-parts">F</span>
-        <span class="logo-parts">L</span>
-        <span class="logo-parts">I</span>
-        <span class="logo-parts">N</span>
-        <span class="logo-parts">E</span>
-      </h2>
-      <!-- <p>A tasefsdfdsdjhbasdh</p> -->
+    </h1>
+    <h2 class="logo">
+      <span class="logo-parts">N</span>
+      <span class="logo-parts">I</span>
+      <span class="logo-parts">J</span>
+      <span class="logo-parts">I</span>
+      <span class="logo-parts">S</span>
+      <span class="logo-parts">A</span>
+      <span class="logo-parts">N</span>
+      <span class="logo-parts">J</span>
+      <span class="logo-parts">I</span>
+      <span class="logo-parts"></span>
+      <span class="logo-parts">E</span>
+      <span class="logo-parts">N</span>
+      <span class="logo-parts"> </span>
+      <span class="logo-parts">5</span>
+      <span class="logo-parts">T</span>
+      <span class="logo-parts">H</span>
+      <span class="logo-parts"></span>
+      <span class="logo-parts">A</span>
+      <span class="logo-parts">N</span>
+      <span class="logo-parts">N</span>
+      <span class="logo-parts">I</span>
+      <span class="logo-parts">V</span>
+      <span class="logo-parts">E</span>
+      <span class="logo-parts">R</span>
+      <span class="logo-parts">S</span>
+      <span class="logo-parts">A</span>
+      <span class="logo-parts">R</span>
+      <span class="logo-parts">Y</span>
+      <span class="logo-parts"></span>
+      <span class="logo-parts">F</span>
+      <span class="logo-parts">A</span>
+      <span class="logo-parts">N</span>
+      <span class="logo-parts"></span>
+      <span class="logo-parts">O</span>
+      <span class="logo-parts">F</span>
+      <span class="logo-parts">F</span>
+      <span class="logo-parts">L</span>
+      <span class="logo-parts">I</span>
+      <span class="logo-parts">N</span>
+      <span class="logo-parts">E</span>
+    </h2>
   </div>
 
 <div class="page hidden">
 <section id="characters" class="card-section">
-  <!-- <h2>Livers</h2> -->
 
   <div class="cards">
 
     <!-- LZT -->
     <div class="column lzt">
-      <button class="card" data-id="elira"
-        style="--glow-color: rgba(149,200,216,1);">
-        <img src="images/elira.png">
+      <button class="card" data-id="elira"  style="--glow-color: rgba(149,200,216,1);">
+        <img src="images/elira.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="finana"
-        style="--glow-color: rgba(121,207,184,1);">
-        <img src="images/feesh.png">
+      <button class="card" data-id="finana" style="--glow-color: rgba(121,207,184,1);">
+        <img src="images/feesh.png" loading="lazy">
       </button>
     </div>
 
     <!-- ZTM -->
     <div class="column ztm">
-      <button class="card" data-id="millie"
-        style="--glow-color: rgba(255,174,66,1);">
-        <img src="images/millie.png">
+      <button class="card" data-id="millie" style="--glow-color: rgba(255,174,66,1);">
+        <img src="images/millie.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="enna"
-        style="--glow-color: rgba(133,142,209,1);">
-        <img src="images/enna.png">
+      <button class="card" data-id="enna"   style="--glow-color: rgba(133,142,209,1);">
+        <img src="images/enna.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="petra"
-        style="--glow-color: rgba(254,188,135,1);">
-        <img src="images/petra.png">
+      <button class="card" data-id="petra"  style="--glow-color: rgba(254,188,135,1);">
+        <img src="images/petra.png" loading="lazy">
       </button>
     </div>
 
     <!-- LXM -->
     <div class="column lxm">
-      <button class="card" data-id="vox"
-        style="--glow-color: rgba(150,0,24,1);">
-        <img src="images/vox.png">
+      <button class="card" data-id="vox"  style="--glow-color: rgba(150,0,24,1);">
+        <img src="images/vox.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="luca"
-        style="--glow-color: rgba(212,175,55,1);">
-        <img src="images/luca.png">
+      <button class="card" data-id="luca" style="--glow-color: rgba(212,175,55,1);">
+        <img src="images/luca.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="shu"
-        style="--glow-color: rgba(166,96,167,1);">
-        <img src="images/shu.png">
+      <button class="card" data-id="shu"  style="--glow-color: rgba(166,96,167,1);">
+        <img src="images/shu.png" loading="lazy">
       </button>
     </div>
 
     <!-- NTX -->
     <div class="column ntx">
-      <button class="card" data-id="sonny"
-        style="--glow-color: rgba(255,243,33,1);">
-        <img src="images/sonny.png">
+      <button class="card" data-id="sonny" style="--glow-color: rgba(255,243,33,1);">
+        <img src="images/sonny.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="alban"
-        style="--glow-color: rgba(255,95,0,1);">
-        <img src="images/alban.png">
+      <button class="card" data-id="alban" style="--glow-color: rgba(255,95,0,1);">
+        <img src="images/alban.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="uki"
-        style="--glow-color: rgba(182,0,255,1);">
-        <img src="images/uki.png">
+      <button class="card" data-id="uki"   style="--glow-color: rgba(182,0,255,1);">
+        <img src="images/uki.png" loading="lazy">
       </button>
     </div>
 
     <!-- ILN -->
     <div class="column iln">
-      <button class="card" data-id="maria"
-        style="--glow-color: rgba(229,90,155,1);">
-        <img src="images/maria.png">
+      <button class="card" data-id="maria"  style="--glow-color: rgba(229,90,155,1);">
+        <img src="images/maria.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="aia"
-        style="--glow-color: rgba(255,254,247,1);">
-        <img src="images/aia.png">
+      <button class="card" data-id="aia"    style="--glow-color: rgba(255,254,247,1);">
+        <img src="images/aia.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="scarle"
-        style="--glow-color: rgba(230,0,18,1);">
-        <img src="images/scarle.png">
+      <button class="card" data-id="scarle" style="--glow-color: rgba(230,0,18,1);">
+        <img src="images/scarle.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="ren"
-        style="--glow-color: rgba(66,155,118,1);">
-        <img src="images/ren.png">
+      <button class="card" data-id="ren"    style="--glow-color: rgba(66,155,118,1);">
+        <img src="images/ren.png" loading="lazy">
       </button>
     </div>
 
     <!-- XSL -->
     <div class="column xsl">
-      <button class="card" data-id="ver"
-        style="--glow-color: rgba(213, 52, 94,1);">
-        <img src="images/ver.png">
+      <button class="card" data-id="ver"   style="--glow-color: rgba(213,52,94,1);">
+        <img src="images/ver.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="doppy"
-        style="--glow-color: rgba(165, 0, 137,1);">
-        <img src="images/doppy.png">
+      <button class="card" data-id="doppy" style="--glow-color: rgba(165,0,137,1);">
+        <img src="images/doppy.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="melo"
-        style="--glow-color: rgba(160, 155, 216,1);">
-        <img src="images/melo.png">
+      <button class="card" data-id="melo"  style="--glow-color: rgba(160,155,216,1);">
+        <img src="images/melo.png" loading="lazy">
       </button>
     </div>
 
     <!-- KRS -->
     <div class="column krs">
-      <button class="card" data-id="zali"
-        style="--glow-color: rgba(195, 65, 150,1);">
-        <img src="images/zali.png">
+      <button class="card" data-id="zali"   style="--glow-color: rgba(195,65,150,1);">
+        <img src="images/zali.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="vanta"
-        style="--glow-color: rgba(135, 40, 225,1);">
-        <img src="images/vanta.png">
+      <button class="card" data-id="vanta"  style="--glow-color: rgba(135,40,225,1);">
+        <img src="images/vanta.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="willy"
-        style="--glow-color: rgba(245, 235, 40,1);">
-        <img src="images/willy.png">
+      <button class="card" data-id="willy"  style="--glow-color: rgba(245,235,40,1);">
+        <img src="images/willy.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="claude"
-        style="--glow-color: rgba(125, 60, 175,1);">
-        <img src="images/claude.png">
+      <button class="card" data-id="claude" style="--glow-color: rgba(125,60,175,1);">
+        <img src="images/claude.png" loading="lazy">
       </button>
     </div>
 
     <!-- DNT -->
     <div class="column dnt">
-      <button class="card" data-id="ronin"
-        style="--glow-color: rgba(149, 45, 34,1);">
-        <img src="images/ronin.png">
+      <button class="card" data-id="ronin" style="--glow-color: rgba(149,45,34,1);">
+        <img src="images/ronin.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="klara"
-        style="--glow-color: rgba(223, 205, 191,1);">
-        <img src="images/klara.png">
+      <button class="card" data-id="klara" style="--glow-color: rgba(223,205,191,1);">
+        <img src="images/klara.png" loading="lazy">
       </button>
     </div>
-    
-    <!-- BTB-->
+
+    <!-- BTB -->
     <div class="column btb">
-      <button class="card" data-id="zeal"
-        style="--glow-color: rgba(0, 115, 40,1);">
-        <img src="images/zeal.png">
+      <button class="card" data-id="zeal"   style="--glow-color: rgba(0,115,40,1);">
+        <img src="images/zeal.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="freo"
-        style="--glow-color: rgba(	170, 0, 55,1);">
-        <img src="images/freo.png">
+      <button class="card" data-id="freo"   style="--glow-color: rgba(170,0,55,1);">
+        <img src="images/freo.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="seible"
-        style="--glow-color: rgba(10,68,170,1);">
-        <img src="images/seible.png">
+      <button class="card" data-id="seible" style="--glow-color: rgba(10,68,170,1);">
+        <img src="images/seible.png" loading="lazy">
       </button>
-
-      <button class="card" data-id="kaelix"
-        style="--glow-color: rgba(205, 205, 0,1);">
-        <img src="images/kaelix.png">
+      <button class="card" data-id="kaelix" style="--glow-color: rgba(205,205,0,1);">
+        <img src="images/kaelix.png" loading="lazy">
       </button>
     </div>
 
@@ -268,77 +218,47 @@
 </section>
 </div>
 
-<!--section id="artists" class="simple-section">
-  <h2>Artists</h2>
-
-  <div class="artist-grid">
-    <img src="artist icon/Ao.png" alt="artist">
-    <img src="artist icon/Chúi.png" alt="artist">
-    <img src="artist icon/Ebi.png" alt="artist">
-    <img src="artist icon/Hana.png" alt="artist">
-    <img src="artist icon/mayo.png" alt="artist">
-    <img src="artist icon/Minty.png" alt="artist">
-    <img src="artist icon/Nhým.png" alt="artist">
-    <img src="artist icon/Stugi.png" alt="artist">
-    <img src="artist icon/Tảo.png" alt="artist">
-    <img src="artist icon/Tegami.png" alt="artist">
-    <img src="artist icon/UsaRi.png" alt="artist">
-    <img src="artist icon/Hầm rượu nhà Zeal Ginjoka.png" alt="artist">
-  </div>
-</section-->
 <section id="artists" class="simple-section">
   <h2>Artists</h2>
 
   <div class="artist-slider">
     <button class="artist-btn prev">‹</button>
-
-    <img id="artistSlide" src="artist icon/Ao.png" alt="artist">
-
+    <img id="artistSlide" src="artist icon/Ao.png" alt="artist" loading="lazy">
     <button class="artist-btn next">›</button>
   </div>
 </section>
 
 <section id="tickets" class="simple-section">
   <h2>Tickets</h2>
-  <!-- <p>Ticket sales / info goes here.</p> -->
-  <!-- TICKET IMAGE -->
   <img
     src="images/ticket.png"
     alt="Event Ticket"
-    class="ticket-image"/>
-  
+    class="ticket-image"
+    loading="lazy"/>
   <a href="https://forms.gle/Dpq14AiJWFcTF7M6A"
     target="_blank"
     rel="noopener noreferrer"
-    class="btn"
-    >Buy Ticket</a>
+    class="btn">Buy Ticket</a>
 </section>
 
 <section id="event" class="event-section">
   <div class="event-container">
     <!-- LEFT: MAP -->
     <div class="event-map">
-      <!-- <a
-      href="https://maps.app.goo.gl/X3kEdGxfKYbH4A6B8"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="map-link"
-      > -->
-
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.622616783372!2d106.67824039999999!3d10.763540199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f777e1cdcff%3A0x5d40334c2a012f56!2sNYMS%20Tea%20%26%20Coffee!5e0!3m2!1svi!2s!4v1769886226505!5m2!1svi!2s" 
-      width="900" 
-      height="650" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.622616783372!2d106.67824039999999!3d10.763540199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f777e1cdcff%3A0x5d40334c2a012f56!2sNYMS%20Tea%20%26%20Coffee!5e0!3m2!1svi!2s!4v1769886226505!5m2!1svi!2s"
+        width="900"
+        height="650"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
     <!-- RIGHT: TEXT -->
     <div class="event-info">
       <h2>NIJISANJI EN 5TH ANNIVERSARY FAN OFFLINE</h2>
       <p>
-        NYMS Tea & Coffee.<br>
+        NYMS Tea &amp; Coffee.<br>
         24 / 05 / 2026.<br>
         18 - 20 Hùng Vương, Phường 1, Quận 10, Thành phố Hồ Chí Minh.
       </p>
@@ -348,30 +268,17 @@
 
 <section id="contact" class="simple-section">
   <h2>Contact</h2>
-  
+
   <div class="contact-container">
-    <!-- Email -->
     <a href="mailto:YOUR_EMAIL_HERE" class="btn contact-btn">
       ✉️ Email Us
     </a>
-
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/profile.php?id=61586792157300" 
-       target="_blank" 
-       rel="noopener noreferrer" 
+    <a href="https://www.facebook.com/profile.php?id=61586792157300"
+       target="_blank"
+       rel="noopener noreferrer"
        class="btn contact-btn">
       📘 Facebook
     </a>
-
-    <!-- Discord (uncomment and replace link when ready) -->
-    <!--
-    <a href="YOUR_DISCORD_INVITE_LINK" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="btn contact-btn">
-      💬 Discord
-    </a>
-    -->
   </div>
 
   <h1 class="contact-note">We look forward to hearing from you!</h1>
@@ -381,13 +288,12 @@
 <div class="overlay" id="overlay">
   <div class="panel" id="panel">
     <button class="close-btn" id="closeBtn">✕</button>
-    <div class="panel-content" id="panelContent">
-      <!-- dynamic -->
-    </div>
+    <img id="panelImage" class="panel-image" src="" alt="Gift art">
   </div>
 </div>
 
-<script src="script.js"></script>
+<!-- defer: parse & execute after HTML is ready, non-blocking -->
+<script src="script.js" defer></script>
 
 </body>
 </html>
