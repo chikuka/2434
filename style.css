@@ -1,3 +1,22 @@
+/* Vietnamese unicode fallback — Cinzel doesn't cover Vietnamese diacritics */
+@font-face {
+  font-family: 'Cinzel';
+  src: local('Cinzel');
+  unicode-range: U+00C0-00FF, U+0102-0103, U+0110-0111, U+0128-0129,
+                 U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9,
+                 U+0300-036F;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cinzel Decorative';
+  src: local('Cinzel Decorative');
+  unicode-range: U+00C0-00FF, U+0102-0103, U+0110-0111, U+0128-0129,
+                 U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9,
+                 U+0300-036F;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +37,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: #b89c78;
-  font-family: 'Castellar';
+  font-family: 'Castellar', 'Cinzel', 'Cormorant Garamond', serif;
   /* Hide scrollbar */
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -148,21 +167,9 @@ nav a:hover { color: #b1700e; }
 .card-section {
   padding: 40px 20px;
   text-align: center;
-  animation: fadeUp 1.6s ease forwards;
 }
 
-.card-section .card {
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards;
-}
-
-/* stagger triggers */
-.card:nth-child(5n + 1) { animation-delay: 5.1s; }
-.card:nth-child(5n + 2) { animation-delay: 5.35s; }
-.card:nth-child(5n + 3) { animation-delay: 5.2s; }
-.card:nth-child(5n + 4) { animation-delay: 5.5s; }
-.card:nth-child(5n + 5) { animation-delay: 5.3s; }
-
+/* Cards stay invisible until JS animates them in after loader hides */
 .card {
   --glow-color: rgba(180,160,255,0.35);
   width: 150px;
@@ -173,7 +180,6 @@ nav a:hover { color: #b1700e; }
   cursor: pointer;
   overflow: hidden;
   opacity: 0;
-  animation: fadeUp 0.8s ease forwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -297,7 +303,7 @@ body.panel-open { overflow: hidden; }
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #6b5b45;
-  font-family: 'Brittanic';
+  font-family: 'Brittanic', 'Cinzel Decorative', 'Cormorant Garamond', serif;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-12px);
@@ -571,7 +577,7 @@ section {
 
 .loading-text {
   color: #d4b88a;
-  font-family: 'Brittanic', sans-serif;
+  font-family: 'Brittanic', 'Cinzel Decorative', 'Cormorant Garamond', serif;
   font-size: 18px;
   letter-spacing: 2px;
   margin: 0;
@@ -673,35 +679,104 @@ img {
   .header-inner {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    padding: 10px 15px;
+    gap: 8px;
+    padding: 8px 12px;
   }
 
   .header-logo img {
-    height: clamp(35px, 9vw, 90px);
+    height: clamp(28px, 7vw, 60px);
+  }
+
+  .header-nav {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .header-nav .btn {
-    padding: 9px 20px;
-    font-size: 17px;
+    padding: 7px 14px;
+    font-size: 13px;
+    letter-spacing: 0.8px;
   }
 
+  /* Cards: use viewport-based sizing so they scale naturally */
   .cards {
-    padding: 30px 15px;
-    gap: 18px;
+    padding: 20px 10px;
+    gap: 10px;
+  }
+
+  /* Each column becomes a flex row of cards side by side */
+  .column {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  /* Card width: fill available space inside column, height proportional */
+  .card {
+    width: clamp(70px, 18vw, 120px);
+    height: clamp(140px, 36vw, 240px);
+  }
+
+  .simple-section {
+    padding: 80px 16px;
   }
 
   .simple-section h2 {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .artist-slider img {
-    width: min(420px, 92vw);
+    width: min(340px, 80vw);
+  }
+
+  .artist-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
   }
 
   .logo-image {
     max-width: 88vw;
-    min-width: 300px;
+    min-width: 280px;
+  }
+
+  .ticket-image {
+    width: min(95vw, 500px);
+  }
+
+  .panel-image {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-nav .btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .cards {
+    gap: 8px;
+  }
+
+  .column {
+    gap: 8px;
+  }
+
+  .card {
+    width: clamp(60px, 17vw, 100px);
+    height: clamp(120px, 34vw, 200px);
+  }
+
+  .simple-section h2 {
+    font-size: 22px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 10px 20px;
   }
 }
 
@@ -716,16 +791,11 @@ img {
     width: 100%;
     max-width: 280px;
     padding: 15px 32px;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .contact-note {
-    font-size: 16px;
-  }
-
-  .card {
-    width: 115px;
-    height: 230px;
+    font-size: 15px;
   }
 }
 
@@ -746,7 +816,7 @@ img {
 }
 
 .event-info h2 {
-  font-family: 'Castellar', serif;
+  font-family: 'Castellar', 'Cinzel', 'Cormorant Garamond', serif;
   font-size: clamp(18px, 2.2vw, 30px);
   line-height: 1.45;
   letter-spacing: 2px;
@@ -759,7 +829,7 @@ img {
 }
 
 .event-info p {
-  font-family: 'Brittanic', sans-serif;
+  font-family: 'Brittanic', 'Cinzel Decorative', 'Cormorant Garamond', serif;
   font-size: clamp(14px, 1.4vw, 20px);
   line-height: 2.2;
   letter-spacing: 1.5px;
@@ -794,9 +864,9 @@ img {
 /* ====================== LOADER NOTICE ====================== */
 .loader-notice {
   margin-top: 24px;
-  padding: 10px 20px;
-  font-family: 'Brittanic', sans-serif;
-  font-size: 15px;
+  padding: 10px 16px;
+  font-family: 'Brittanic', 'Cinzel Decorative', 'Cormorant Garamond', serif;
+  font-size: 11px;
   letter-spacing: 1.2px;
   line-height: 1.7;
   color: rgba(180, 120, 80, 0.75);
@@ -811,3 +881,4 @@ img {
   0%, 100% { opacity: 0.7; }
   50%       { opacity: 1; }
 }
+
